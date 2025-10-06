@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vector Practice</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="container">
+      <h1>Vector Practice: Draw and Sum 2D Vectors</h1>
+      <p class="subtitle">
+        You're given two vectors. Draw them, compute their sum, and draw the sum on paper. When ready, reveal the answer to compare in two plots.
+      </p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Given Vectors</h2>
+        <div class="vectors">
+          <div class="vector-input">
+            <label for="ax">a = (</label>
+            <input id="ax" type="number" step="1" value="3" />
+            <span>,</span>
+            <input id="ay" type="number" step="1" value="2" />
+            <span>)</span>
+          </div>
+          <div class="vector-input">
+            <label for="bx">b = (</label>
+            <input id="bx" type="number" step="1" value="-1" />
+            <span>,</span>
+            <input id="by" type="number" step="1" value="4" />
+            <span>)</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="randomize">New Problem</button>
+          <button id="reveal">Reveal Answer</button>
+          <button id="hide" class="secondary" disabled>Hide Answer</button>
+          <div class="range">
+            <label>Range: [
+              <input id="minRange" type="number" step="1" value="-8" /> ,
+              <input id="maxRange" type="number" step="1" value="8" />
+              ]
+            </label>
+          </div>
+        </div>
+
+        <div class="answer" id="answerSummary" hidden>
+          <strong>Sum:</strong>
+          <span id="sumText">(?, ?)</span>
+        </div>
+      </section>
+
+      <section id="plots" class="plots" hidden>
+        <div class="plot-card">
+          <h3>All vectors in standard position</h3>
+          <canvas id="standardCanvas" width="560" height="420">Your browser does not support canvas.</canvas>
+        </div>
+        <div class="plot-card">
+          <h3>Summands tip-to-tail</h3>
+          <canvas id="tipCanvas" width="560" height="420">Your browser does not support canvas.</canvas>
+        </div>
+      </section>
+
+      <section class="card notes">
+        <h2>Instructions</h2>
+        <ul>
+          <li>Use the components shown above to draw vectors a and b on graph paper.</li>
+          <li>Compute a + b and draw the resultant.</li>
+          <li>Click "Reveal Answer" to see two correct drawings: standard position and tip-to-tail.</li>
+          <li>Click "New Problem" for fresh random vectors. You can adjust the random range.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <span>Made for vector practice — front-end only.</span>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
